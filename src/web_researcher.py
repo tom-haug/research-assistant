@@ -40,9 +40,12 @@ full_research_chain = (
 
 report_chain = (
     RunnablePassthrough.assign(
-        research_summary=full_research_chain | collapse_list_of_lists
+        research_summary = full_research_chain | collapse_list_of_lists
     )
     | research_report_prompt
     | ChatOpenAI(model="gpt-3.5-turbo-1106")
     | StrOutputParser()
 )
+
+def generate_report_from_question(question: str):
+    return report_chain.invoke({"question": question})

@@ -1,8 +1,6 @@
-from web_researcher import report_chain
+from web_researcher import generate_report_from_question
 
 if __name__ == "__main__":
-  output = report_chain.invoke({
-    "question": "What is the difference between Langsmith and langchain?"
-  })
-
+  output = generate_report_from_question("What is the origin of the universe?");
+  
   print(output)
