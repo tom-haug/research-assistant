@@ -14,7 +14,7 @@ app = FastAPI(
 add_routes(
     app,
     report_chain,
-    path="/reserach-assistant",
+    path="/research-assistant",
 )
 
 if __name__ == "__main__":
